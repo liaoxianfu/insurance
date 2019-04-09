@@ -1,0 +1,114 @@
+2019-04-08 21:24:14.512  INFO 11640 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 11640 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:24:14.640  INFO 11640 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:24:17.519  INFO 11640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:24:19.439  INFO 11640 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:24:20.597  INFO 11640 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:24:21.445  INFO 11640 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 7.774 seconds (JVM running for 10.228)
+2019-04-08 21:24:22.909  INFO 11640 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:24:22.912  INFO 11640 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:24:23.009  INFO 11640 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:39:58.375  INFO 10032 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 10032 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:39:58.377  INFO 10032 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:39:59.544  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:39:59.549  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:39:59.595  INFO 10032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2019-04-08 21:40:00.110  INFO 10032 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d671abf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:40:00.407  INFO 10032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:40:01.266  INFO 10032 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:40:02.627  INFO 10032 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:40:03.922  INFO 10032 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 6.279 seconds (JVM running for 7.613)
+2019-04-08 21:40:04.326  INFO 10032 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:40:04.329  INFO 10032 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:40:06.463  INFO 10032 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:40:06.465  INFO 10032 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:40:24.247  INFO 10032 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:43:56.883  INFO 5364 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 5364 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:43:56.886  INFO 5364 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:43:58.155  INFO 5364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:43:58.159  INFO 5364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:43:58.205  INFO 5364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2019-04-08 21:43:58.722  INFO 5364 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$186ae2e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:43:59.018  INFO 5364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:43:59.765  INFO 5364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:44:01.026  INFO 5364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:44:02.345  INFO 5364 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 6.198 seconds (JVM running for 7.545)
+2019-04-08 21:44:02.746  INFO 5364 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:44:02.749  INFO 5364 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:44:04.930  INFO 5364 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:44:04.933  INFO 5364 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:44:04.945  INFO 5364 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:46:13.431  INFO 12196 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 12196 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:46:13.455  INFO 12196 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:46:14.672  INFO 12196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:46:14.676  INFO 12196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:46:14.722  INFO 12196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-04-08 21:46:15.232  INFO 12196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$abe4422b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:46:15.530  INFO 12196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:46:16.212  INFO 12196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:46:17.393  INFO 12196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:46:18.664  INFO 12196 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 5.869 seconds (JVM running for 7.121)
+2019-04-08 21:46:19.095  INFO 12196 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:46:19.099  INFO 12196 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:46:21.255  INFO 12196 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:46:21.257  INFO 12196 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:46:21.266  INFO 12196 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:46:57.971  INFO 4744 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 4744 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:46:57.975  INFO 4744 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:46:59.095  INFO 4744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:46:59.099  INFO 4744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:46:59.146  INFO 4744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-04-08 21:46:59.658  INFO 4744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d5212977] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:46:59.947  INFO 4744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:47:00.678  INFO 4744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:47:01.859  INFO 4744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:47:03.204  INFO 4744 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 5.979 seconds (JVM running for 7.304)
+2019-04-08 21:47:03.627  INFO 4744 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:47:03.630  INFO 4744 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:47:05.749  INFO 4744 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:47:05.751  INFO 4744 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:47:05.762  INFO 4744 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:48:25.605  INFO 16852 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 16852 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:48:25.607  INFO 16852 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:48:26.713  INFO 16852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:48:26.717  INFO 16852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:48:26.762  INFO 16852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-04-08 21:48:27.268  INFO 16852 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4d4c97bd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:48:27.577  INFO 16852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:48:28.288  INFO 16852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:48:29.569  INFO 16852 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:48:30.913  INFO 16852 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 5.965 seconds (JVM running for 7.215)
+2019-04-08 21:48:31.656  INFO 16852 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:48:31.658  INFO 16852 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:48:33.959  INFO 16852 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:48:33.962  INFO 16852 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:48:33.973  INFO 16852 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:50:01.423  INFO 8284 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 8284 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:50:01.426  INFO 8284 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:50:02.519  INFO 8284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:50:02.523  INFO 8284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:50:02.569  INFO 8284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-04-08 21:50:03.089  INFO 8284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8a72ac2f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:50:03.393  INFO 8284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:50:04.096  INFO 8284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:50:05.497  INFO 8284 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:50:06.918  INFO 8284 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 6.178 seconds (JVM running for 7.46)
+2019-04-08 21:50:07.316  INFO 8284 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:50:07.320  INFO 8284 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:50:09.538  INFO 8284 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:50:09.540  INFO 8284 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:50:09.551  INFO 8284 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-08 21:51:10.578  INFO 11516 --- [main] c.l.insurance.InsuranceApplicationTests  : Starting InsuranceApplicationTests on liao with PID 11516 (started by liao in D:\Code\java\insurance)
+2019-04-08 21:51:10.580  INFO 11516 --- [main] c.l.insurance.InsuranceApplicationTests  : No active profile set, falling back to default profiles: default
+2019-04-08 21:51:11.801  INFO 11516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-04-08 21:51:11.805  INFO 11516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-04-08 21:51:11.850  INFO 11516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-04-08 21:51:12.370  INFO 11516 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8a72ac2f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-04-08 21:51:12.696  INFO 11516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-08 21:51:13.398  INFO 11516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-08 21:51:14.643  INFO 11516 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:51:15.937  INFO 11516 --- [main] c.l.insurance.InsuranceApplicationTests  : Started InsuranceApplicationTests in 6.107 seconds (JVM running for 7.459)
+2019-04-08 21:51:16.326  INFO 11516 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2019-04-08 21:51:16.330  INFO 11516 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2019-04-08 21:51:18.545  INFO 11516 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-08 21:51:18.546  INFO 11516 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-08 21:51:18.557  INFO 11516 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
