@@ -106,7 +106,7 @@ public class CodeGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         strategy.setEntityLombokModel(true);
-//        strategy.setRestControllerStyle(true);
+        strategy.setRestControllerStyle(true);
 //        strategy.setSuperControllerClass("com.liao.iot.common.BaseController");
         strategy.setInclude(scanner("表名"));
 
