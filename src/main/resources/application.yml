@@ -16,5 +16,6 @@ logging:
     com:
       liao:
         insurance: debug
-  file: log/log-debug.log
+# 取消日志文件的文本记录
+#  file: log/log-debug.log
 
