@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-04-10
  */
 @RestController
-@RequestMapping("/insurance/order")
-public class OrderController {
+@RequestMapping("/insurance/orders")
+public class OrdersController {
 
 }

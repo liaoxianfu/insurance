@@ -1,6 +1,6 @@
 package com.liao.insurance.mapper;
 
-import com.liao.insurance.entity.Order;
+import com.liao.insurance.entity.Orders;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author liao
  * @since 2019-04-10
  */
-public interface OrderMapper extends BaseMapper<Order> {
+public interface OrdersMapper extends BaseMapper<Orders> {
 
 }

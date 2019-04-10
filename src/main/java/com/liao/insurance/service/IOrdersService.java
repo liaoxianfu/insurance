@@ -1,6 +1,6 @@
 package com.liao.insurance.service;
 
-import com.liao.insurance.entity.Order;
+import com.liao.insurance.entity.Orders;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author liao
  * @since 2019-04-10
  */
-public interface IOrderService extends IService<Order> {
-
+public interface IOrdersService extends IService<Orders> {
+    boolean addOrder(Orders orders);
 }
