@@ -7,14 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ * 汽车信息
  * </p>
  *
  * @author liao
  * @since 2019-04-10
  */
 @RestController
-@RequestMapping("/insurance/car-info")
+@RequestMapping("/insurance/carInfo")
 public class CarInfoController {
+
+
+
 
 }
