@@ -11,6 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.acl.LastOwnerException;
 import java.util.List;
 
 import static com.liao.insurance.codeInfo.CodeInfo.*;
@@ -59,9 +60,10 @@ public class CompanyController {
 
     /**
      * 在判定查询对象不存在的情况下处理数据 返回相应的信息
+     *
      * @return json
      */
-    private Object noCompanyProcess(){
+    private Object noCompanyProcess() {
         ModelMap modelMap = new ModelMap();
         modelMap.addAttribute("info", "暂无数据");
         modelMap.addAttribute("code", NO_COMPANY_EXITS);
@@ -70,16 +72,15 @@ public class CompanyController {
 
     /**
      * <p>
-     *     获取所有的公司对象并转换成json数据<br/>
-     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * 获取所有的公司对象并转换成json数据<br/>
+     * 如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
      * </p>
-     *
      *
      * @return 所有的公司对象的json信息
      */
     private Object getAllCompany() {
         List<Company> companyList = companyService.getAllCompany();
-        if (companyList.size()==0){
+        if (companyList.size() == 0) {
             return noCompanyProcess();
         }
         return JSON.toJSON(companyList);
@@ -88,9 +89,10 @@ public class CompanyController {
 
     /**
      * <p>
-     *     通过公司名称公司对象并转换成json数据<br/>
-     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * 通过公司名称公司对象并转换成json数据<br/>
+     * 如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
      * </p>
+     *
      * @param companyName 公司名称
      * @return 公司对象json
      */
@@ -105,20 +107,31 @@ public class CompanyController {
 
     /**
      * <p>
-     *     通过地址获取所有的公司对象并转换成json数据<br/>
-     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * 通过地址获取所有的公司对象并转换成json数据<br/>
+     * 如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
      * </p>
+     *
      * @param address 地址
      * @return 公司对象列表json
      */
     private Object getCompanyByAddress(String address) {
         logger.debug("公司地址----->{}", address);
         List<Company> companyList = companyService.getCompanyByAddress(address);
-        if (companyList.size()==0){
+        if (companyList.size() == 0) {
             return noCompanyProcess();
         }
         return JSON.toJSON(companyList);
     }
+
+    /**
+     * <p>
+     *     通过不同的条件查询对应的公司
+     * </p>
+     *
+     * @param companyName 公司名
+     * @param address 地址
+     * @return 公司集合或者对象 json
+     */
 
     @GetMapping("/")
     public Object getCompanyByArgs(String companyName, String address) {
@@ -132,12 +145,54 @@ public class CompanyController {
         }
     }
 
+    /**
+     * 通过id查询对应的公司
+     * @param id id
+     * @return 公司对象
+     */
 
     @GetMapping("/{id}")
     public Object getCompanyById(@PathVariable Integer id) {
         Company company = companyService.getById(id);
+        if (company==null){
+           return noCompanyProcess();
+        }
         return JSON.toJSON(company);
     }
 
+    /**
+     * 通过公司名称 修改公司的信息
+     * @param company 公司对象
+     * @return 修改信息
+     */
+    @PutMapping("/")
+    public Object updateCompany(Company company) {
+        ModelMap modelMap = new ModelMap();
+        int code = companyService.updateCompany(company);
+        if (code == COMPANY_UPDATE_SUCCESS) {
+            modelMap.addAttribute("info", "修改成功");
+        } else {
+            modelMap.addAttribute("info", "修改失败");
+            code=COMPANY_UPDATE_ERROR;
+        }
+        modelMap.addAttribute("code", code);
+        return JSON.toJSON(modelMap);
+    }
+
+    @DeleteMapping("/{id}")
+    public Object deleteCompanyById(@PathVariable int id){
+
+
+        ModelMap modelMap = new ModelMap();
+        int code = companyService.deleteCompanyById(id);
+        if (code==COMPANY_DELETE_SUCCESS){
+            modelMap.addAttribute("info","删除成功");
+        }else {
+            modelMap.addAttribute("info","删除失败");
+            code = COMPANY_DELETE_ERROR;
+        }
+        modelMap.addAttribute("code",code);
+        return JSON.toJSON(modelMap);
+    }
 
 }

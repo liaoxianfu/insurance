@@ -69,5 +69,16 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
         return companyMapper.selectList(queryWrapper);
     }
 
+    @Override
+    public int updateCompany(Company company) {
+        QueryWrapper<Company> queryWrapper = new QueryWrapper<Company>().eq("company_name", company.getCompanyName());
+        return companyMapper.update(company, queryWrapper);
+    }
+
+    @Override
+    public int deleteCompanyById(Integer id) {
+        return companyMapper.deleteById(id);
+    }
+
 
 }

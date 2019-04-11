@@ -43,5 +43,19 @@ public interface ICompanyService extends IService<Company> {
      */
     List<Company> getCompanyByAddress(String address);
 
+    /**
+     * 更新公司信息
+     * @param company 公司对象
+     * @return 状态值
+     */
+    int updateCompany(Company company);
+
+    /**
+     * 通过id删除公司
+     * @param id id
+     * @return 状态码
+     */
+    int deleteCompanyById(Integer id);
+
 
 }
