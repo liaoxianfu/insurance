@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,24 +45,93 @@ public class CompanyController {
         logger.debug(company.toString());
         if (code == COMPANY_CREATE_SUCCESS) {
             model.addAttribute("info", "添加成功");
-        }
-        else if (code==COMPANY_EXITS){
-            model.addAttribute("info","公司已经存在");
-        }
-        else {
+        } else if (code == COMPANY_EXITS) {
+            model.addAttribute("info", "公司已经存在");
+        } else {
             model.addAttribute("info", "添加失败");
         }
-        logger.debug("状态码---->{}",code);
+        logger.debug("状态码---->{}", code);
         model.addAttribute("code", code);
         logger.debug("返回的信息----> {}", model);
         return JSON.toJSON(model);
     }
 
-    @GetMapping("/")
-    public Object getAllCompany() {
+
+    /**
+     * 在判定查询对象不存在的情况下处理数据 返回相应的信息
+     * @return json
+     */
+    private Object noCompanyProcess(){
+        ModelMap modelMap = new ModelMap();
+        modelMap.addAttribute("info", "暂无数据");
+        modelMap.addAttribute("code", NO_COMPANY_EXITS);
+        return JSON.toJSON(modelMap);
+    }
+
+    /**
+     * <p>
+     *     获取所有的公司对象并转换成json数据<br/>
+     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * </p>
+     *
+     *
+     * @return 所有的公司对象的json信息
+     */
+    private Object getAllCompany() {
         List<Company> companyList = companyService.getAllCompany();
+        if (companyList.size()==0){
+            return noCompanyProcess();
+        }
         return JSON.toJSON(companyList);
     }
+
+
+    /**
+     * <p>
+     *     通过公司名称公司对象并转换成json数据<br/>
+     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * </p>
+     * @param companyName 公司名称
+     * @return 公司对象json
+     */
+    private Object getCompanyByName(String companyName) {
+        logger.debug("公司名----->{}", companyName);
+        Company company = companyService.getCompanyByName(companyName);
+        if (company == null) {
+            return noCompanyProcess();
+        }
+        return JSON.toJSON(company);
+    }
+
+    /**
+     * <p>
+     *     通过地址获取所有的公司对象并转换成json数据<br/>
+     *     如果查询的数据集为空，就返回 noCompanyProcess() 函数处理得到的信息
+     * </p>
+     * @param address 地址
+     * @return 公司对象列表json
+     */
+    private Object getCompanyByAddress(String address) {
+        logger.debug("公司地址----->{}", address);
+        List<Company> companyList = companyService.getCompanyByAddress(address);
+        if (companyList.size()==0){
+            return noCompanyProcess();
+        }
+        return JSON.toJSON(companyList);
+    }
+
+    @GetMapping("/")
+    public Object getCompanyByArgs(String companyName, String address) {
+        logger.debug("info---->公司名称：{},  地址： {}", companyName, address);
+        if (companyName == null && address == null) {
+            return getAllCompany();
+        } else if (companyName != null) {
+            return getCompanyByName(companyName);
+        } else {
+            return getCompanyByAddress(address);
+        }
+    }
+
 
     @GetMapping("/{id}")
     public Object getCompanyById(@PathVariable Integer id) {

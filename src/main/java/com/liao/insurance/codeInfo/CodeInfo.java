@@ -12,8 +12,10 @@ public class CodeInfo {
      */
     public static int COMPANY_CREATE_SUCCESS = 1;
 
-
-
+    /**
+     * 没有查到相应的公司
+     */
+    public static int NO_COMPANY_EXITS = -2;
 
 
 }

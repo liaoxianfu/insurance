@@ -18,7 +18,7 @@ import static com.liao.insurance.codeInfo.CodeInfo.*;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author liao
@@ -26,7 +26,6 @@ import static com.liao.insurance.codeInfo.CodeInfo.*;
  */
 @Service
 public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements ICompanyService {
-
 
 
     @Resource
@@ -37,18 +36,18 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
     @Override
     public int addCompany(Company company) {
         String companyName = company.getCompanyName();
-        logger.debug("公司名称 {}",companyName);
+        logger.debug("公司名称 {}", companyName);
         QueryWrapper<Company> companyQueryWrapper = new QueryWrapper<>();
-        companyQueryWrapper.eq("company_name",companyName);
+        companyQueryWrapper.eq("company_name", companyName);
         Company company1 = companyMapper.selectOne(companyQueryWrapper);
-        if (company1==null){
+        if (company1 == null) {
             int insert = companyMapper.insert(company);
-            logger.debug("返回的值 {}",insert);
-            if (insert==COMPANY_CREATE_SUCCESS){
+            logger.debug("返回的值 {}", insert);
+            if (insert == COMPANY_CREATE_SUCCESS) {
                 return COMPANY_CREATE_SUCCESS;
             }
             return insert;
-        }else {
+        } else {
             return COMPANY_EXITS;
         }
     }
@@ -56,6 +55,18 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
     @Override
     public List<Company> getAllCompany() {
         return companyMapper.selectList(null);
+    }
+
+    @Override
+    public Company getCompanyByName(String companyName) {
+        QueryWrapper<Company> queryWrapper = new QueryWrapper<Company>().eq("company_name", companyName);
+        return companyMapper.selectOne(queryWrapper);
+    }
+
+    @Override
+    public List<Company> getCompanyByAddress(String address) {
+        QueryWrapper<Company> queryWrapper = new QueryWrapper<Company>().eq("address", address);
+        return companyMapper.selectList(queryWrapper);
     }
 
 

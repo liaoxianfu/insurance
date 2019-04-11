@@ -25,9 +25,23 @@ public interface ICompanyService extends IService<Company> {
     /**
      * 获取所有的公司列表
      *
-     * @return list
+     * @return 公司列表
      */
     List<Company> getAllCompany();
+
+    /**
+     * 通过公司名称获取公司
+     * @param companyName 公司名
+     * @return 公司对象
+     */
+    Company getCompanyByName(String companyName);
+
+    /**
+     * 通过地址获取公司列表
+     * @param address 地址
+     * @return 公司列表
+     */
+    List<Company> getCompanyByAddress(String address);
 
 
 }
