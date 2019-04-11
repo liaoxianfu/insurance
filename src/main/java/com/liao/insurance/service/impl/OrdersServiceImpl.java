@@ -71,7 +71,7 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
     public boolean updateStatusByUUID(String insuranceNumber, Integer status) {
         Orders orders_new = new Orders();
         QueryWrapper<Orders> qw = new QueryWrapper<Orders>();
-        qw.eq("insurance_number", status);
+        qw.eq("insurance_number", insuranceNumber);
         if(ordersMapper.selectOne(qw) == null){
             return false;
         }else {
