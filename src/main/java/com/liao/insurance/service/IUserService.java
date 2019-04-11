@@ -13,4 +13,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    boolean addUser(User user);
+
+    boolean updatePassword(String username, String password_old, String password_new);
+
+    boolean updateAddress(String username, String address);
+
+    boolean updateCarId(String username, Integer carId);
+
+    boolean updatePhoneNumber(String username, String phoneNumber);
+
+    User findUserByUserNameAndPassWord(String username, String password);
+
 }

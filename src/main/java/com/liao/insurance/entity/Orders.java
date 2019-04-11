@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author liao
- * @since 2019-04-10
+ * @since 2019-04-11
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -41,6 +41,11 @@ public class Orders implements Serializable {
     private Integer insuranceId;
 
     private Integer userId;
+
+    /**
+     * 订单状态
+     */
+    private Integer status;
 
     /**
      * 剩余天数
