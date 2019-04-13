@@ -57,7 +57,11 @@ public class CodeInfo {
     /**
      * 汽车添加失败状态码
      */
-    public static int CAR_CREATE_ERROR = -1;
+    public static int NO_CAR_EXIST = -1;
 
+    public static int UPDATE_ERROR = 0;
+    public static int UPDATE_SUCCESS = 1;
+    public static int DELETE_SUCCESS = 1;
+    public static int DELETE_ERROE = -1;
 
 }

@@ -41,7 +41,7 @@ public class Car implements Serializable {
     /**
      * 估价
      */
-    private BigDecimal evaluatePrice;
+    private Double evaluatePrice;
 
 
 }
