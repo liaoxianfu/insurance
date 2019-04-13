@@ -4,6 +4,8 @@ package com.liao.insurance.controller;
 import com.alibaba.fastjson.JSON;
 import com.liao.insurance.entity.Company;
 import com.liao.insurance.service.ICompanyService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ import static com.liao.insurance.codeInfo.CodeInfo.*;
  */
 @RestController
 @RequestMapping("/insurance/company")
+@Api(tags = "1.1",description = "公司增删改查",value = "公司增删改查")
 public class CompanyController {
 
     private final ICompanyService companyService;
@@ -37,6 +40,7 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
+    @ApiOperation(value = "添加公司",notes = "不需要添加id参数")
     @PostMapping("/")
     public Object addCompany(Company company) {
         ModelMap model = new ModelMap();
@@ -133,6 +137,8 @@ public class CompanyController {
      * @return 公司集合或者对象 json
      */
 
+    @ApiOperation(value = "通过不同的参数获取公司",
+            notes = "如果不带参数就是请求所有的公司，以列表展示")
     @GetMapping("/")
     public Object getCompanyByArgs(String companyName, String address) {
         logger.debug("info---->公司名称：{},  地址： {}", companyName, address);
@@ -151,6 +157,7 @@ public class CompanyController {
      * @return 公司对象
      */
 
+    @ApiOperation(value = "通过id获取公司")
     @GetMapping("/{id}")
     public Object getCompanyById(@PathVariable Integer id) {
         Company company = companyService.getById(id);
@@ -165,6 +172,7 @@ public class CompanyController {
      * @param company 公司对象
      * @return 修改信息
      */
+    @ApiOperation("修改公司信息")
     @PutMapping("/")
     public Object updateCompany(Company company) {
         ModelMap modelMap = new ModelMap();
@@ -179,6 +187,7 @@ public class CompanyController {
         return JSON.toJSON(modelMap);
     }
 
+    @ApiOperation(value = "通过id删除公司")
     @DeleteMapping("/{id}")
     public Object deleteCompanyById(@PathVariable int id){
         ModelMap modelMap = new ModelMap();

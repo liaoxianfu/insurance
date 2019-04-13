@@ -4,6 +4,10 @@ spring:
     username: data1
     password: GTFSMJYPKXY4TxiN
     driver-class-name: com.mysql.cj.jdbc.Driver
+  swagger:
+    base-package: com.liao
+    enabled: true
+
 #  redis:
 #    database: 1
 #    host: localhost

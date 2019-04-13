@@ -44,4 +44,20 @@ public class CodeInfo {
     public static int COMPANY_DELETE_ERROR = -4;
 
 
+    /**
+     * 汽车存在状态码
+     */
+    public static int CAR_EXIST = 0;
+
+    /**
+     * 汽车添加成功状态码
+     */
+    public static int CAR_CREATE_SUCCESS = 1;
+
+    /**
+     * 汽车添加失败状态码
+     */
+    public static int CAR_CREATE_ERROR = -1;
+
+
 }
