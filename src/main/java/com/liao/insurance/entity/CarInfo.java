@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author liao
@@ -22,7 +22,6 @@ import lombok.experimental.Accessors;
 public class CarInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -43,6 +42,9 @@ public class CarInfo implements Serializable {
      * 制造商
      */
     private String productionCompany;
-
+    /**
+     * 车主ID
+     */
+    private Integer userId;
 
 }

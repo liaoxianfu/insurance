@@ -53,5 +53,11 @@ public class Insurance implements Serializable {
      */
     private String description;
 
+    /**
+     * 车主的汽车信息id
+     */
+    private Integer carInfoId;
+
+
 
 }
