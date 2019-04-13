@@ -12,5 +12,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-04-10
  */
 public interface ICarInfoService extends IService<CarInfo> {
+    /**
+     * 添加汽车
+     * @param car 汽车对象
+     * @return 状态码
+     */
+    int addCar(CarInfo car);
 
 }

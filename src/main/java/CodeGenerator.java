@@ -104,6 +104,7 @@ public class CodeGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         strategy.setEntityLombokModel(true);
+//        设置rest url
         strategy.setRestControllerStyle(true);
 //        strategy.setSuperControllerClass("com.liao.iot.common.BaseController");
         strategy.setInclude(scanner());

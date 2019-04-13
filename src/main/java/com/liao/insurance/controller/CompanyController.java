@@ -181,8 +181,6 @@ public class CompanyController {
 
     @DeleteMapping("/{id}")
     public Object deleteCompanyById(@PathVariable int id){
-
-
         ModelMap modelMap = new ModelMap();
         int code = companyService.deleteCompanyById(id);
         if (code==COMPANY_DELETE_SUCCESS){
