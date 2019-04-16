@@ -21,6 +21,6 @@ public interface IRecommendationService extends IService<Recommendation> {
 
     boolean delRecommendationByCarIdAndInsuranceId(Integer carId, Integer insuranceId);
 
-    Recommendation selectByCarIdAndInsuranceId(Integer carId, Integer insuranceId);
+    Recommendation findByCarIdAndInsuranceId(Integer carId, Integer insuranceId);
 
 }

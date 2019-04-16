@@ -64,7 +64,7 @@ public class OrdersController {
 
     @ApiOperation(value = "根据用户id获取订单",notes = "")
     @GetMapping("/{user_id}")
-    public Object findAllByUserId(@PathVariable Integer user_id){
+    public Object findAllByUserId(@PathVariable Integer user_id) throws Exception{
         ModelMap model = new ModelMap();
         List<Orders> list = ordersService.findAllByUserId(user_id);
         if (list == null || list.isEmpty()){
@@ -83,7 +83,7 @@ public class OrdersController {
      */
     @ApiOperation(value = "根据用户id和订单状态获取订单",notes = "具体状态码以后设置")
     @GetMapping("/{user_id}/{status}")
-    public Object findAllByUserIdAndStatus(@PathVariable Integer user_id, @PathVariable Integer status){
+    public Object findAllByUserIdAndStatus(@PathVariable Integer user_id, @PathVariable Integer status) throws Exception{
         ModelMap model = new ModelMap();
         List<Orders> list = ordersService.findAllByUserIdAndStatus(user_id, status);
         if (list == null || list.isEmpty()){
@@ -102,7 +102,7 @@ public class OrdersController {
      */
     @ApiOperation(value = "根据订单号修改剩余天数",notes = "")
     @PutMapping("/residual/{insuranceNumber}/{residual}")
-    public Object updateResidualByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer residual){
+    public Object updateResidualByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer residual) throws Exception{
         ModelMap model = new ModelMap();
         boolean code = ordersService.updateResidualByInsuranceNumber(insuranceNumber, residual);
         if (code == false){
@@ -122,7 +122,7 @@ public class OrdersController {
      */
     @ApiOperation(value = "根据订单号修改订单状态",notes = "")
     @PutMapping("/status/{insuranceNumber}/{status}")
-    public Object updateStatusByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer status){
+    public Object updateStatusByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer status) throws Exception{
         ModelMap model = new ModelMap();
         boolean code = ordersService.updateStatusByInsuranceNumber(insuranceNumber, status);
         if (code == false){

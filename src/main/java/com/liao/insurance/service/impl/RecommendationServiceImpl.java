@@ -72,7 +72,7 @@ public class RecommendationServiceImpl extends ServiceImpl<RecommendationMapper,
     }
 
     @Override
-    public Recommendation selectByCarIdAndInsuranceId(Integer carId, Integer insuranceId) {
+    public Recommendation findByCarIdAndInsuranceId(Integer carId, Integer insuranceId) {
         QueryWrapper<Recommendation> qw = new QueryWrapper<Recommendation>();
         Map<String, Integer> selectMap = new HashMap<String, Integer>();
         selectMap.put("car_id", carId);
