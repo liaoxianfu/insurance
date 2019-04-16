@@ -52,7 +52,7 @@ public class RecommendationController {
 
     @ApiOperation(value = "修改推荐等级", notes = "参数：车辆型号id和保险id")
     @PutMapping("/")
-    public Object updateLevel(Recommendation recommendation){
+    public Object updateLevel(Recommendation recommendation) throws Exception{
         ModelMap model = new ModelMap();
         if (recommendationService.updateLevel(recommendation) == false){
             model.addAttribute("info", "修改推荐等级失败");
@@ -64,7 +64,7 @@ public class RecommendationController {
 
     @ApiOperation(value = "删除智能报价", notes = "参数：车辆型号id和保险id")
     @DeleteMapping("/")
-    public Object delRecommendation(Integer carId, Integer insuranceId){
+    public Object delRecommendation(Integer carId, Integer insuranceId) throws Exception{
         ModelMap model = new ModelMap();
         if (recommendationService.delRecommendationByCarIdAndInsuranceId(carId, insuranceId) == false){
             model.addAttribute("info", "删除智能报价失败");
@@ -76,7 +76,7 @@ public class RecommendationController {
 
     @ApiOperation(value = "查询智能报价", notes = "参数：车辆型号id和保险id")
     @GetMapping("/")
-    public Object findRecommendation(Integer carId, Integer insuranceId){
+    public Object findRecommendation(Integer carId, Integer insuranceId) throws Exception{
         ModelMap model = new ModelMap();
         Recommendation recommendation = new Recommendation();
         recommendation = recommendationService.findByCarIdAndInsuranceId(carId, insuranceId);

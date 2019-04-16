@@ -39,16 +39,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public boolean updatePassword(String username, String password_old, String password_new) {
-        User user = new User();
         QueryWrapper<User> qw = new QueryWrapper<User>();
         qw.eq("username", username);
-        user = userMapper.selectOne(qw);
+        User user = userMapper.selectOne(qw);
         if (user == null){
             return false;
         }else {
-            user.setPassword(password_new);
-            userMapper.update(user, qw);
-            return true;
+            if (user.getPassword().equals(password_old) == false){
+                return false;
+            }else {
+                user.setPassword(password_new);
+                userMapper.update(user, qw);
+                return true;
+            }
         }
     }
 
@@ -100,7 +103,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public User findUserByUserNameAndPassWord(String username, String password) {
         Map<String, String> selectMap = new HashMap<String, String>();
-        selectMap.put("useranme", username);
+        selectMap.put("username", username);
         selectMap.put("password", password);
         QueryWrapper<User> qw = new QueryWrapper<User>();
         qw.allEq(selectMap);
