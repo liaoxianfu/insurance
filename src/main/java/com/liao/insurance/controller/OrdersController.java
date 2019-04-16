@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSON;
 import com.liao.insurance.entity.Orders;
 import com.liao.insurance.service.IOrdersService;
 import com.sun.org.apache.xpath.internal.operations.Or;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * <p>
@@ -23,6 +26,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/insurance/orders")
+@Api(tags = "2.0",description = "订单增删改查",value = "订单增删改查")
 public class OrdersController {
 
     @Resource
@@ -30,17 +34,23 @@ public class OrdersController {
 
     private static Logger logger = LoggerFactory.getLogger(CompanyController.class);
 
+
+    @ApiOperation(value = "添加订单",notes = "不需要添加id和insuranceNumber参数")
     @PostMapping("/")
-    public Object addOrder(@RequestBody Orders orders) throws Exception{
+    public Object addOrder(Orders orders) throws Exception{
         ModelMap model = new ModelMap();
-        if (orders.getInsuranceNumber() == null ||
-                orders.getCompanyId() == null ||
+        if (orders.getCompanyId() == null ||
                 orders.getInsuranceId() == null ||
                 orders.getResidual() == null ||
                 orders.getUserId() == null){
             model.addAttribute("info", "数据不能为空");
             return JSON.toJSON(model);
         }
+
+        //生成UUID并添加到该orders当中
+        UUID uuid = UUID.randomUUID();
+        orders.setInsuranceNumber(uuid.toString());
+
         boolean code = ordersService.addOrder(orders);
         logger.debug("code ---> {}", code);
         if (code == false){
@@ -51,6 +61,8 @@ public class OrdersController {
         return JSON.toJSON(model);
     }
 
+
+    @ApiOperation(value = "根据用户id获取订单",notes = "")
     @GetMapping("/{user_id}")
     public Object findAllByUserId(@PathVariable Integer user_id){
         ModelMap model = new ModelMap();
@@ -69,6 +81,7 @@ public class OrdersController {
      * @param status
      * @return
      */
+    @ApiOperation(value = "根据用户id和订单状态获取订单",notes = "具体状态码以后设置")
     @GetMapping("/{user_id}/{status}")
     public Object findAllByUserIdAndStatus(@PathVariable Integer user_id, @PathVariable Integer status){
         ModelMap model = new ModelMap();
@@ -82,15 +95,16 @@ public class OrdersController {
     }
 
     /**
-     * 根据订单UUID修改剩余天数
+     * 根据订单号修改剩余天数
      * @param insuranceNumber
      * @param residual
      * @return
      */
+    @ApiOperation(value = "根据订单号修改剩余天数",notes = "")
     @PutMapping("/residual/{insuranceNumber}/{residual}")
-    public Object updateResidualByUUID(@PathVariable String insuranceNumber, @PathVariable Integer residual){
+    public Object updateResidualByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer residual){
         ModelMap model = new ModelMap();
-        boolean code = ordersService.updateResidualByUUID(insuranceNumber, residual);
+        boolean code = ordersService.updateResidualByInsuranceNumber(insuranceNumber, residual);
         if (code == false){
             model.addAttribute("info", "修改剩余天数失败");
             return JSON.toJSON(model);
@@ -101,15 +115,16 @@ public class OrdersController {
     }
 
     /**
-     * 根据订单UUID修改订单状态
+     * 根据订单号修改订单状态
      * @param insuranceNumber
      * @param status
      * @return
      */
+    @ApiOperation(value = "根据订单号修改订单状态",notes = "")
     @PutMapping("/status/{insuranceNumber}/{status}")
-    public Object updateStatusByUUID(@PathVariable String insuranceNumber, @PathVariable Integer status){
+    public Object updateStatusByInsuranceNumber(@PathVariable String insuranceNumber, @PathVariable Integer status){
         ModelMap model = new ModelMap();
-        boolean code = ordersService.updateStatusByUUID(insuranceNumber, status);
+        boolean code = ordersService.updateStatusByInsuranceNumber(insuranceNumber, status);
         if (code == false){
             model.addAttribute("info", "修改订单状态失败");
             return JSON.toJSON(model);

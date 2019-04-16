@@ -19,11 +19,11 @@ public interface IOrdersService extends IService<Orders> {
 
     List<Orders> findAll();
 
-    boolean updateResidualByUUID(String insuranceNumber, Integer residual);
+    boolean updateResidualByInsuranceNumber(String insuranceNumber, Integer residual);
 
     List<Orders> findAllByUserId(Integer userId);
 
-    boolean updateStatusByUUID(String insuranceNumber, Integer status);
+    boolean updateStatusByInsuranceNumber(String insuranceNumber, Integer status);
 
     List<Orders> findAllByUserIdAndStatus(Integer userId, Integer status);
 

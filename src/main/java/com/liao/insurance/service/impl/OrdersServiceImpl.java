@@ -46,7 +46,7 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
     }
 
     @Override
-    public boolean updateResidualByUUID(String insuranceNumber, Integer residual) {
+    public boolean updateResidualByInsuranceNumber(String insuranceNumber, Integer residual) {
         Orders order_new = new Orders();
         QueryWrapper<Orders> qw = new QueryWrapper<Orders>();
         qw.eq("insurance_number", insuranceNumber);
@@ -68,7 +68,7 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> impleme
     }
 
     @Override
-    public boolean updateStatusByUUID(String insuranceNumber, Integer status) {
+    public boolean updateStatusByInsuranceNumber(String insuranceNumber, Integer status) {
         Orders orders_new = new Orders();
         QueryWrapper<Orders> qw = new QueryWrapper<Orders>();
         qw.eq("insurance_number", insuranceNumber);
