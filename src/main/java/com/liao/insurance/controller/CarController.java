@@ -2,31 +2,26 @@ package com.liao.insurance.controller;
 
 
 import com.alibaba.fastjson.JSON;
-import com.battcn.swagger.properties.ApiDataType;
-import com.battcn.swagger.properties.ApiParamType;
 import com.liao.insurance.entity.Car;
 import com.liao.insurance.service.ICarService;
-import com.sun.org.apache.bcel.internal.generic.MONITORENTER;
+import com.liao.insurance.utils.InfoUtils;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-
 import java.util.List;
 
 import static com.liao.insurance.codeInfo.CodeInfo.*;
+import static com.liao.insurance.codeInfo.MessageInfo.*;
 
 /**
  * <p>
- * 前端控制器
+ * 实现前端的增删改查
+ *
  * </p>
  *
  * @author liao
@@ -59,11 +54,11 @@ public class CarController {
         logger.debug("汽车添加  code---->{}", status);
         ModelMap modelMap = new ModelMap();
         if (status == CAR_CREATE_SUCCESS) {
-            modelMap.addAttribute("info", "添加成功");
+            modelMap.addAttribute("info", ADD_SUCCESS_MESSAGE);
         } else if (status == CAR_EXIST) {
             modelMap.addAttribute("info", "已经存在该类型的汽车");
         } else {
-            modelMap.addAttribute("info", "添加失败");
+            modelMap.addAttribute("info", ADD_ERROR_MESSAGE);
         }
         modelMap.addAttribute("code", status);
         return JSON.toJSON(modelMap);
@@ -76,7 +71,7 @@ public class CarController {
      */
     private Object noCarProcess() {
         ModelMap modelMap = new ModelMap();
-        modelMap.addAttribute("info", "暂无数据");
+        modelMap.addAttribute("info", NO_INFO_MEAASGE);
         modelMap.addAttribute("code", NO_CAR_EXIST);
         return JSON.toJSON(modelMap);
     }
@@ -162,32 +157,25 @@ public class CarController {
      */
     @PutMapping("/")
     @ApiOperation(value = "更新汽车信息", notes = "返回的状态值为1 表示成功 其他代表失败")
-    public Object UpdateCar(Car car) {
-        ModelMap modelMap = new ModelMap();
+    public Object updateCar(Car car) {
         int code = carService.updateCar(car);
-        if (code == UPDATE_SUCCESS) {
-            modelMap.addAttribute("info", "修改成功");
-        } else {
-            modelMap.addAttribute("info", "修改失败");
-        }
-        modelMap.addAttribute("code", code);
-        return JSON.toJSON(modelMap);
+        return InfoUtils.postInfoProcess(code);
     }
+
     @ApiOperation(value = "删除汽车信息", notes = "返回的状态值为1 表示成功 其他代表失败")
     @DeleteMapping("/{id}")
-    public Object DeleteById(@PathVariable Integer id){
+    public Object deleteById(@PathVariable Integer id) {
         ModelMap modelMap = new ModelMap();
         int code = DELETE_ERROE;
         boolean b = carService.removeById(id);
-        if (b){
-            modelMap.addAttribute("info","删除成功");
-            code=DELETE_SUCCESS;
-        }else {
-            modelMap.addAttribute("info","删除失败");
+        if (b) {
+            modelMap.addAttribute("info", DELETE_SUCCESS_MESSAGE);
+            code = DELETE_SUCCESS;
+        } else {
+            modelMap.addAttribute("info", DELETE_ERROR_MESSAGE);
         }
-        modelMap.addAttribute("code",code);
+        modelMap.addAttribute("code", code);
         return JSON.toJSON(modelMap);
-
     }
 
 

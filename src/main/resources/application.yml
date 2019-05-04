@@ -7,6 +7,13 @@ spring:
   swagger:
     base-package: com.liao
     enabled: true
+    description: 车辆保险APP API文档
+    contact:
+      name: 廖先富、罗文灿
+      email: 222649332@qq.com
+      url: http://47.100.29.122/swagger-ui.html
+    version: V1.0
+    terms-of-service-url: http://47.100.29.122/swagger-ui.html
 
 #  redis:
 #    database: 1

@@ -63,5 +63,9 @@ public class CodeInfo {
     public static int UPDATE_SUCCESS = 1;
     public static int DELETE_SUCCESS = 1;
     public static int DELETE_ERROE = -1;
+    public static int ADD_SUCCESS = 1;
+    public static int ADD_ERROR = 0;
+    public static int NO_EXIST = -2;
+
 
 }

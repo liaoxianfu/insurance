@@ -10,10 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.acl.LastOwnerException;
 import java.util.List;
 
 import static com.liao.insurance.codeInfo.CodeInfo.*;
@@ -187,6 +185,11 @@ public class CompanyController {
         return JSON.toJSON(modelMap);
     }
 
+    /**
+     * 通过公司的id删除公司记录
+     * @param id
+     * @return
+     */
     @ApiOperation(value = "通过id删除公司")
     @DeleteMapping("/{id}")
     public Object deleteCompanyById(@PathVariable int id){
