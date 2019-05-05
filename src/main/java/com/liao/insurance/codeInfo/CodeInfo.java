@@ -59,6 +59,17 @@ public class CodeInfo {
      */
     public static int NO_CAR_EXIST = -1;
 
+    /**
+     * 查询成功
+     */
+    public static int GET_SUCCESS = 1;
+
+    /**
+     * 参数错误状态码
+     */
+    public static int STATUS_ERROR = -1;
+
+
     public static int UPDATE_ERROR = 0;
     public static int UPDATE_SUCCESS = 1;
     public static int DELETE_SUCCESS = 1;
