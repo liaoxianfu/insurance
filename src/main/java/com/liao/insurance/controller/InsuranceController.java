@@ -99,50 +99,54 @@ public class InsuranceController {
     @GetMapping("/")
     @ApiOperation(value = "通过不同的参数获取保险列表")
 
-    public Object getInsuranceByArgs(String insuranceName,Integer companyId){
-        logger.debug("InsuranceName={}，companId={}",insuranceName,companyId);
-        if (insuranceName!=null){
+    public Object getInsuranceByArgs(String insuranceName, Integer companyId) {
+        logger.debug("InsuranceName={}，companId={}", insuranceName, companyId);
+        if (insuranceName != null) {
             return getInsuranceByName(insuranceName);
-        }else if (companyId!=null){
+        } else if (companyId != null) {
             return getInsuranceByCompanyId(companyId);
-        }else {
+        } else {
             return getAllInsurance();
         }
     }
 
     @PutMapping("/")
     @ApiOperation(value = "通过id更新保险")
-    public Object putInsuranceById(Insurance insurance){
+    public Object putInsuranceById(Insurance insurance) {
         ModelMap modelMap = new ModelMap();
         int i = insuranceService.updateInsuranceById(insurance);
-        modelMap.addAttribute("code",i);
-        if (i==1){
-            modelMap.addAttribute("info","添加成功");
-        }else {
-            modelMap.addAttribute("info","添加失败");
+        modelMap.addAttribute("code", i);
+        if (i == 1) {
+            modelMap.addAttribute("info", "添加成功");
+        } else {
+            modelMap.addAttribute("info", "添加失败");
         }
-        modelMap.addAttribute("code",i);
+        modelMap.addAttribute("code", i);
         return JSON.toJSON(modelMap);
 
     }
 
     @DeleteMapping("/")
     @ApiOperation(value = "通过id删除数据")
-    public Object deleteInsuranceById(Integer id){
+    public Object deleteInsuranceById(Integer id) {
         ModelMap modelMap = new ModelMap();
         int code = insuranceService.deleteInsuranceById(id);
-        modelMap.addAttribute("code",code);
-        if (code==DELETE_SUCCESS){
-            modelMap.addAttribute("info","删除成功");
-        }else {
-            modelMap.addAttribute("info","删除失败");
+        modelMap.addAttribute("code", code);
+        if (code == DELETE_SUCCESS) {
+            modelMap.addAttribute("info", "删除成功");
+        } else {
+            modelMap.addAttribute("info", "删除失败");
         }
         return JSON.toJSON(modelMap);
 
     }
 
-
-
+    @PostMapping("/advice")
+    @ApiOperation(value = "通过汽车的价格推荐相应的保险")
+    public Object findInsuranceListByCarPrice(double price) {
+        List<Insurance> insuranceList = insuranceService.getInsuranceListByCarPrice(price);
+        return JSON.toJSON(insuranceList);
+    }
 
 
 }

@@ -57,4 +57,12 @@ public class InsuranceServiceImpl extends ServiceImpl<InsuranceMapper, Insurance
     public int deleteInsuranceById(Integer id) {
         return insuranceMapper.deleteById(id);
     }
+
+    @Override
+    public List<Insurance> getInsuranceListByCarPrice(double price) {
+        int minStandardPrice =  (int) price/100;
+        int maxStandardPrice =  (int) price/10;
+        QueryWrapper<Insurance> queryWrapper = new QueryWrapper<Insurance>().between("money", minStandardPrice, maxStandardPrice);
+        return  insuranceMapper.selectList(queryWrapper);
+    }
 }

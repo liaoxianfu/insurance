@@ -58,6 +58,8 @@ public interface IInsuranceService extends IService<Insurance> {
      */
     int deleteInsuranceById(Integer id);
 
+    List<Insurance> getInsuranceListByCarPrice(double price);
+
 
 
 }
